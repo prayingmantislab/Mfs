@@ -11,12 +11,10 @@
 import React from 'react';
 import {View, Text} from 'react-native';
 
-
 const App = () => {
- 
   return (
     <View>
-      <Text>sitting in my pants coding</Text>
+      <Text>good morning</Text>
     </View>
   );
 };
