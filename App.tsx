@@ -10,18 +10,25 @@
  */
 
 import * as React from 'react';
-import {View, Text, Button} from 'react-native';
+import {View, Text, Button, ImageBackground, StyleSheet} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createNativeStackNavigator} from '@react-navigation/native-stack';
+import { withSafeAreaInsets } from 'react-native-safe-area-context';
 
+const image = {
+  uri: 'https://res.cloudinary.com/dg6wajgky/image/upload/v1630484733/cute-romantic-panda-couple-suitable-illustration-valentine-wedding-card-cute-romantic-couple-panda-vector-135824516_dtvgee.jpg'
+}
 function HomeScreen({navigation}) {
   return (
     <View style={{flex: 1, alignItems: 'center', justifyContent: 'center'}}>
-      <Text>Press the button bitch</Text>
+      <ImageBackground source={image} style={styles.image}>
+      <Text style={styles.header}>Welcome Back</Text>
+      <Text style={styles.innerText}>Start now. Change forever</Text>
       <Button
-        title="suck on this"
+        title="Sign in"
         onPress={() => navigation.navigate('Details')}
       />
+      </ImageBackground>
     </View>
   );
 }
@@ -46,4 +53,22 @@ function App() {
   );
 }
 
+const styles = StyleSheet.create({
+  header : {
+    color: '#ffffff',
+    fontWeight:'bold',
+    fontSize: 32,
+  },
+  innerText : {
+    color: '#ffffff',
+    fontWeight:'bold',
+    fontSize: 16,
+  },
+  image: {
+    alignSelf: "stretch",
+    flex: 1,
+    resizeMode: 'cover',
+    justifyContent: 'center',
+  },
+})
 export default App;
